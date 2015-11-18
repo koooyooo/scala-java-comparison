@@ -4,8 +4,16 @@ import org.junit.Test
 import org.junit.Assert._
 import org.hamcrest.core.Is._
 
+/**
+ * Scalaの for文は、以下の処理機構を持っている。
+ * - フィルタ処理
+ * - 変換処理 (変数への束縛)
+ * - リスト変換
+ */
 class For_Test_S {
-    /**
+  
+  /**
+   * [Javaとの対比]
    * for文 (index指定)
    * 
    * シナリオ： 国名が複数格納された Listを CSV形式の文字列に変換する。
@@ -26,6 +34,7 @@ class For_Test_S {
   }
   
   /**
+   * [Javaとの対比]
    * for文 (Iterator指定-whileにて代替)
    * 
    * シナリオ： 国名が複数格納された Listを CSV形式の文字列に変換する。
@@ -48,6 +57,7 @@ class For_Test_S {
   }
   
   /**
+   * [Javaとの対比]
    * for文 (拡張 for文)
    * 
    * シナリオ： 国名が複数格納された Listを CSV形式の文字列に変換する。
@@ -68,6 +78,7 @@ class For_Test_S {
   }
   
   /**
+   * [Javaとの対比]
    * for文 (for文と同等の処理を 関数にて実現)
    * 
    * シナリオ： 国名が複数格納された Listを CSV形式の文字列に変換する。

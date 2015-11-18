@@ -9,6 +9,11 @@ import java.util.List;
 
 import org.junit.Test;
 
+/**
+ * Javaの forループは大きく3種類に分かれる。
+ * 
+ * @author K.Onda
+ */
 public class For_Test_J {
 
 	/**
