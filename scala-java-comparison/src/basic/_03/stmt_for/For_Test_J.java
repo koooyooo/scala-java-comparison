@@ -83,18 +83,32 @@ public class For_Test_J {
 	
 	/**
 	 * [API 8以上]
-	 * for文 (for文と同等の処理を Java8(JoinAPI)にて実現)
+	 * for文 (同等の処理を Java8の streamAPIにて実現)
 	 * 
 	 * シナリオ： 国名が複数格納された Listを CSV形式の文字列に変換する。
-	 * 着眼点：  用途に適合したライブラリの利用により最適化
+	 * 着眼点：  streamAPIの利用により、ループ処理を隠蔽化
 	 */
 	@Test
-	public void testForStream() {
+	public void testForJoinCollector() {
+		final List<String> countryList = Arrays.asList("Japan", "UnitedStates", "UnitedKingdom", "France", "China", "Geraman");
+		final String countryCSV = countryList.stream().collect(Collectors.joining(", "));
+		assertThat(countryCSV, is("Japan, UnitedStates, UnitedKingdom, France, China, Geraman"));		
+	}
+	
+	/**
+	 * [API 8以上]
+	 * for文 (同等の処理を Java8の JoinAPIにて実現)
+	 * 
+	 * シナリオ： 国名が複数格納された Listを CSV形式の文字列に変換する。
+	 * 着眼点：  当該処理に特化したAPIの利用により最適化
+	 */
+	@Test
+	public void testForJoinAPI() {
 		final List<String> countryList = Arrays.asList("Japan", "UnitedStates", "UnitedKingdom", "France", "China", "Geraman");
 		final String countryCSV = String.join(", ", countryList);
 		assertThat(countryCSV, is("Japan, UnitedStates, UnitedKingdom, France, China, Geraman"));
 	}
-	
+		
 	/**
 	 * [API 7以下]
 	 * フィルタリング処理
