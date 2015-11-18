@@ -30,6 +30,7 @@ class If_Test_S {
    * 
    * シナリオ： Bool値を確認し、真なら"T", 偽なら"F"を返す
    * 着眼点： Scalaの ifを "式"として記述した場合。Javaと異なり結果を返せるため、"value"値が変化せず安定化。
+   *       (式として記述した場合、if/else部分で最後に評価されたものが結果となる)
    */
   @Test
   def testIf_2_LikeScala(): Unit = {
