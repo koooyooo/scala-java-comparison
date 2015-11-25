@@ -70,6 +70,33 @@ public class Comparator_Test_J {
 	
 	/**
 	 * [API 8以降]
+	 * 関数を利用して実現したソート (Comparator#comparingを利用して、属性を指定するだけで実現)
+	 * 
+	 * シナリオ：(同上)
+	 * 着眼点： 関数内容が、属性の比較から、属性自体に簡素化された。
+	 */
+	@Test
+	public void testFuncComparatorByAttr() {
+		final List<Person> personList = 
+				Arrays.asList(
+						new Person("Alice", 20),
+						new Person("James", 35),
+						new Person("Tonny", 50),
+						new Person("Jack",  15));
+		
+		final List<Person> sortedList = 
+				personList.stream().sorted(
+						Comparator.comparing(person -> person.name())).collect(Collectors.toList());
+		
+		assertThat(sortedList, is(Arrays.asList(
+				new Person("Jack",  15),
+				new Person("Alice", 20),
+				new Person("James", 35),
+				new Person("Tonny", 50))));
+	}
+	
+	/**
+	 * [API 8以降]
 	 * 関数を利用して実現したソート (メソッド参照により実現)
 	 * 
 	 * シナリオ：(同上)
