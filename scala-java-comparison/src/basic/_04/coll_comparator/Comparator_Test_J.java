@@ -21,7 +21,7 @@ public class Comparator_Test_J {
 	 */
 	@SuppressWarnings("unchecked")
 	@Test
-	public void test() {
+	public void testOldComparator() {
 		final List<Person> personList = 
 				Arrays.asList(
 						new Person("Alice", 20),
@@ -49,7 +49,7 @@ public class Comparator_Test_J {
 	 *        Function自体を変数として宣言しておき、適宜参照を配分させる必要がある。
 	 */
 	@Test
-	public void test2() {
+	public void testFuncComparator() {
 		final List<Person> personList = 
 				Arrays.asList(
 						new Person("Alice", 20),
@@ -76,7 +76,7 @@ public class Comparator_Test_J {
 	 * 着眼点： comparator.compare と同等の役割を持つメソッドの参照により参照
 	 */
 	@Test
-	public void test3() {
+	public void testFuncComparatorByMethodRef() {
 		final List<Person> personList = 
 				Arrays.asList(
 						new Person("Alice", 20),
@@ -112,7 +112,8 @@ public class Comparator_Test_J {
 	 * シナリオ：(同上)
 	 * 着眼点： comparator.compare と同等の役割を持つメソッドの参照により参照
 	 */
-	public void test4() {
+	@Test
+	public void testFuncComparatorByMethodRefReversed() {
 		final List<Person> personList = 
 				Arrays.asList(
 						new Person("Alice", 20),
