@@ -86,7 +86,7 @@ public class Comparator_Test_J {
 		
 		final List<Person> sortedList = 
 				personList.stream().sorted(
-						Comparator.comparing(person -> person.name())).collect(Collectors.toList());
+						Comparator.comparing(person -> person.age())).collect(Collectors.toList());
 		
 		assertThat(sortedList, is(Arrays.asList(
 				new Person("Jack",  15),
